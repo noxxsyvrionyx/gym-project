@@ -1,0 +1,117 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Raleway:wght@400;600&display=swap');
+
+.hero {
+  height: 100vh;
+  background-image: url("https://scontent.fdac19-1.fna.fbcdn.net/v/t39.30808-6/469415865_17900925468095000_2836878876156412101_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=_ieGEOGN2bcQ7kNvwFy1Jui&_nc_oc=Adn1unoNSzXj4Unk6j4opdWqn7Y2iVKhxudPOGjU3forMfLXjej25SzXVnuhZG84jZk&_nc_zt=23&_nc_ht=scontent.fdac19-1.fna&_nc_gid=k90JXO3Imnjbs3f5lZVYjg&oh=00_AffxwveWyhk9zqS0a4kvkFs2E5630dZXu-9AqDBe57T4Hw&oe=68FD57BE");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+}
+
+/* Left div - Welcome To */
+.hero-intro {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(10%); /* move slightly toward middle */
+}
+
+.hero-intro h1 {
+  color: rgba(255, 255, 255, 0.97);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4rem;
+  margin: 0;
+  letter-spacing: 3px;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Right div - Fitness Hub */
+.hero-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  /* Animation setup */
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeUp 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+/* Fade-in + upward motion keyframes */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-main h1 {
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2.5rem;
+  margin: 0 0 10px 0;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease-in-out;
+}
+
+.hero-main h1:hover {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+}
+
+.hero-main p {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    text-align: center;
+  }
+
+  .hero-intro {
+    margin-bottom: 0;
+    transform: none;
+  }
+
+  .hero-intro h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero-main {
+    margin-top: 0;
+    align-items: center;
+
+    /* Adjust animation slightly for smaller screens */
+    animation-delay: 0.1s;
+    transform: translateY(40px);
+  }
+
+  .hero-main h1 {
+    font-size: 2rem;
+  }
+
+  .hero-main p {
+    font-size: 1rem;
+  }
+}

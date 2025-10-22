@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Raleway:wght@400;600&display=swap');
+
+.offer {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #141414, #2a2a2a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6%;
+  scroll-margin-top: 80px; /* ensures smooth scroll from nav */
+}
+
+.offer-content {
+  max-width: 800px;
+  text-align: center;
+  color: white;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeUpOffer 1.2s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.offer-content h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.offer-content p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Keyframes for smooth upward animation */
+@keyframes fadeUpOffer {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 768px) {
+  .offer {
+    padding: 10%;
+  }
+
+  .offer-content h1 {
+    font-size: 2rem;
+  }
+
+  .offer-content p {
+    font-size: 1rem;
+  }
+}
+
